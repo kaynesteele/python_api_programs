@@ -4,7 +4,7 @@ import json
 import time
 
 client = discord.Client()
-lolApiKey = "RGAPI-4350e045-389e-4141-92fb-c7b07800ef07"
+lolApiKey = ""
 
 def getSummonerInfo(s, message):
     url = "https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/" +str(s) + "?api_key=" + lolApiKey
@@ -38,7 +38,7 @@ def is_me(m):
 
 
 def youtube(s):
-    url="https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + s + "&key=AIzaSyC8XKm_lbuEq6r9Y_llr5AbMAT-bIddnTw"
+    url="https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + s + "&key="
     test1=requests.get(url)
     jsonText=json.loads(test1.text)
     return str(jsonText['items'][0]['id']['videoId'])
@@ -60,4 +60,4 @@ async def on_message(message):
         await message.channel.send(main(message, message.content[5:]))
         
 
-client.run('MTk5OTUwNTAwNzk0MzM1MjMy.Xe8pgw.rYJ7G0d7_68fKYM8F80jEcfukyk')
+client.run('')
